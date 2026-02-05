@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   REFAB AFRICA — DESIGN SYSTEM
+   Extracted from Figma: TA & DESIGN (Homepage)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TYPOGRAPHY — Clash Display (All Weights)
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/VFMK2COV3DN37JR7JQ4CAOJPZ7KWKNY7/ODD5YJNDLHZZB2MIT3DPVH4EIHAMZ34D/BSY64LPTT3OPLVKAZKL3AHKRWZ3D74AC.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/2GQIT54GKQY3JRFTSHS4ARTRNRQISSAA/3CIP5EBHRRHE5FVQU3VFROPUERNDSTDF/JTSL5QESUXATU47LCPUNHZQBDDIWDOSW.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/BFBSY7LX5W2U2EROCLVVTQP4VS7S4PC3/IIUX4FGTMD2LK2VWD3RVTAS4SSMUN7B5/53RZKGODFYDW3QHTIL7IPOWTBCSUEZK7.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESIGN TOKENS — Tailwind CSS v4 Theme
+   -------------------------------------------------------------------------- */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ---- Fonts ---- */
+  --font-clash: "Clash Display", sans-serif;
+  --font-sans: "Clash Display", sans-serif;
+  --default-font-family: "Clash Display", sans-serif;
+
+  /* ---- Color Palette ---- */
+
+  /* Primary — Green */
+  --color-primary: #15B800;
+  --color-primary-dark: #0F8100;
+  --color-primary-deepest: #041F00;
+  --color-primary-light: rgba(21, 184, 0, 0.12);
+  --color-primary-82: rgba(21, 184, 0, 0.82);
+
+  /* Neutrals */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray: #7D7D7D;
+  --color-gray-light: #EDEDED;
+  --color-background: #FAFAFA;
+  --color-foreground: #000000;
+
+  /* Accent */
+  --color-accent-brown: #5E4826;
+
+  /* Overlays */
+  --color-overlay-dark: rgba(0, 20, 8, 0.69);
+  --color-overlay-white-12: rgba(255, 255, 255, 0.12);
+  --color-overlay-white-15: rgba(255, 255, 255, 0.15);
+  --color-overlay-white-37: rgba(255, 255, 255, 0.37);
+
+  /* ---- Typography Scale ---- */
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-base: 17px;
+  --font-size-md: 20px;
+  --font-size-lg: 24px;
+  --font-size-xl: 40px;
+  --font-size-2xl: 48px;
+  --font-size-3xl: 58px;
+  --font-size-4xl: 64px;
+  --font-size-display: 350px;
+
+  /* ---- Line Height ---- */
+  --leading-design: 1.23em;
+
+  /* ---- Border Radius ---- */
+  --radius-none: 0px;
+  --radius-xs: 5px;
+  --radius-sm: 9px;
+  --radius-md: 12px;
+  --radius-default: 15px;
+  --radius-lg: 20px;
+  --radius-xl: 36px;
+  --radius-2xl: 42px;
+  --radius-3xl: 49px;
+  --radius-full: 651px;
+
+  /* ---- Blur Effects ---- */
+  --blur-sm: 4px;
+  --blur-md: 6.4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* --------------------------------------------------------------------------
+   3. BASE STYLES
+   -------------------------------------------------------------------------- */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Clash Display", sans-serif;
+  line-height: 1.23em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   4. UTILITY CLASSES — Design System Helpers
+   -------------------------------------------------------------------------- */
+
+/* Stroke / border patterns from Figma */
+.border-primary {
+  border-color: #15B800;
+}
+
+.border-primary-dashed {
+  border: 6px dashed rgba(21, 184, 0, 0.82);
+  border-dash-pattern: 50px;
+}
+
+.border-bottom-primary {
+  border-bottom: 1px solid #15B800;
+}
+
+/* Glass / overlay effects */
+.glass-dark {
+  background: rgba(0, 20, 8, 0.69);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Gradient from Figma */
+.gradient-subtle {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 250, 252, 1) 0%,
+    rgba(246, 247, 246, 1) 50%,
+    rgba(234, 235, 237, 1) 100%
+  );
 }
