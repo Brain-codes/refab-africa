@@ -4,16 +4,21 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const navLinks = [
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+export default function Navbar(): React.JSX.Element {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeLink, setActiveLink] = useState<string>("Home");
 
   return (
     <nav className="w-full bg-black">
