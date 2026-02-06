@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,9 +19,38 @@ const navLinks: NavLink[] = [
 export default function Navbar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("Home");
+  const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // Background change: past 100dvh
+      setScrolled(currentY > viewportHeight);
+
+      // Hide/show: only after 100dvh
+      if (currentY > viewportHeight) {
+        setHidden(currentY > lastScrollY.current); // scrolling down = hide
+      } else {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full bg-black">
+    <nav
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        hidden && !isOpen ? "-translate-y-full" : "translate-y-0"
+      } ${scrolled ? "bg-primary-deepest" : "bg-transparent"}`}
+    >
       <div className="mx-auto flex max-w-[1728px] items-center justify-between px-6 py-7 sm:px-10 md:px-16 lg:px-[141px]">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">

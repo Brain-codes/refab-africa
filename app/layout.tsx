@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import AnimationProviders from "./components/providers/AnimationProviders";
 
 export const metadata: Metadata = {
   title: "Refab Africa",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-clash antialiased">
-        <Navbar />
-        {children}
+        <AnimationProviders>
+          <Navbar />
+          {children}
+        </AnimationProviders>
       </body>
     </html>
   );

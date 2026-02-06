@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:api.fontshare.com)"
+      "WebFetch(domain:api.fontshare.com)",
+      "Bash(dir:*)",
+      "mcp__framelink-figma__get_figma_data",
+      "mcp__framelink-figma__download_figma_images",
+      "WebFetch(domain:www.figma.com)"
     ]
   }
 }
