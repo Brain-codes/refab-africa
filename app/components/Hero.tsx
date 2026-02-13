@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Button from "./ui/Button";
 
 const SLIDE_INTERVAL = 30000; // 30 seconds
 
@@ -148,21 +148,15 @@ export default function Hero() {
             variants={itemVariants}
           >
             <motion.div variants={buttonVariants}>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-sm bg-primary-dark px-8 py-[18px] text-md font-bold leading-design text-white transition-colors hover:bg-primary sm:px-[51px]"
-              >
+              <Button variant="primary-dark" href="/contact">
                 Build Impact With Us
-              </Link>
+              </Button>
             </motion.div>
 
             <motion.div variants={buttonVariants}>
-              <Link
-                href="/donate"
-                className="inline-flex items-center justify-center rounded-sm border border-primary bg-primary-light px-8 py-[18px] text-md font-bold leading-design text-primary transition-colors hover:bg-primary hover:text-white sm:px-[51px]"
-              >
+              <Button variant="outline" href="/donate">
                 Donate Now
-              </Link>
+              </Button>
             </motion.div>
           </motion.div>
         </motion.div>
