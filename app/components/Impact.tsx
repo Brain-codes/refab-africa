@@ -64,7 +64,7 @@ export default function Impact() {
         >
           {/* Card 1 — Full Image */}
           <StaggerItem>
-            <div className="relative aspect-[503/632] overflow-hidden rounded-2xl border border-primary">
+            <div className="relative aspect-[503/632] overflow-hidden md:rounded-2xl rounded-sm border border-primary">
               <Image
                 src="/images/impact-card-1.png"
                 alt="Impact through textile waste recovery"
@@ -77,7 +77,7 @@ export default function Impact() {
 
           {/* Card 2 — Textile Waste Recovery (text + clipped bg image) */}
           <StaggerItem>
-            <div className="relative aspect-[503/632] overflow-hidden rounded-2xl border border-primary bg-primary-light">
+            <div className="relative aspect-[503/632] overflow-hidden md:rounded-2xl rounded-sm border border-primary bg-primary-light">
               {/* Background image — overflow-clipped by parent */}
               <div className="absolute inset-0">
                 <Image
@@ -103,7 +103,7 @@ export default function Impact() {
 
           {/* Card 3 — Circular Fashion & Products (image + text) */}
           <StaggerItem>
-            <div className="relative aspect-[503/632] overflow-hidden rounded-2xl border border-primary bg-primary-light">
+            <div className="relative aspect-[503/632] overflow-hidden md:rounded-2xl rounded-sm border border-primary bg-primary-light">
               {/* Clipped image */}
               <div className="absolute inset-0">
                 <Image
@@ -129,7 +129,7 @@ export default function Impact() {
 
           {/* Card 4 — Wide Full Image */}
           <StaggerItem className="sm:col-span-2">
-            <div className="relative aspect-[503/632] overflow-hidden rounded-2xl border border-primary sm:aspect-[1032/632]">
+            <div className="relative aspect-[503/632] overflow-hidden md:rounded-2xl rounded-sm border border-primary sm:aspect-[1032/632]">
               <Image
                 src="/images/impact-card-4.png"
                 alt="Community collaboration and impact"
@@ -142,7 +142,7 @@ export default function Impact() {
 
           {/* Card 5 — Community & Collaboration (text + bottom image) */}
           <StaggerItem>
-            <div className="relative aspect-[503/632] overflow-hidden rounded-2xl border border-primary bg-primary-light">
+            <div className="relative aspect-[503/632] overflow-hidden md:rounded-2xl rounded-sm border border-primary bg-primary-light">
               {/* Background image */}
               <div className="absolute inset-0">
                 <Image
