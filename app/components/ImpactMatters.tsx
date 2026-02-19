@@ -24,18 +24,18 @@ const impactItems = [
 
 export default function ImpactMatters() {
   return (
-    <section className="relative w-full overflow-hidden bg-primary-deepest px-[5%] py-[clamp(4rem,8vw,8.75rem)]">
+    <section className="relative w-full overflow-hidden bg-primary-deepest px-[5%] py-[clamp(3.2rem,6.5vw,7.2rem)]">
       {/* TODO: Add decorative SVG vectors (Vector 1 & Vector 3) once downloaded from Figma */}
 
       <div className="relative z-10 mx-auto max-w-[1728px]">
         {/* ── Header ── */}
         <FadeIn direction="up" as="div">
-          <div className="flex flex-col gap-[1rem]">
-            <h2 className="text-[clamp(2rem,4.5vw,3.1rem)] font-medium leading-design text-white">
+          <div className="flex flex-col gap-[0.82rem]">
+            <h2 className="text-[clamp(1.65rem,3.7vw,2.5rem)] font-medium leading-design text-white">
               <span className="font-extrabold text-primary">IMPACT</span> That
               Matters
             </h2>
-            <p className="max-w-[54rem] text-[clamp(0.875rem,1.5vw,1.2rem)] leading-design text-white">
+            <p className="max-w-[44rem] text-[clamp(0.72rem,1.2vw,1rem)] leading-design text-white">
               Every action we take contributes to a more sustainable future for
               people and the planet.
             </p>
@@ -44,7 +44,7 @@ export default function ImpactMatters() {
 
         {/* ── Image Container with Cards Inside ── */}
         <FadeIn direction="up" as="div" delay={0.1}>
-          <div className="relative mt-[clamp(2rem,4vw,4rem)] overflow-hidden rounded-2xl border border-primary p-[clamp(2rem,5vw,4.75rem)]">
+          <div className="relative mt-[clamp(1.65rem,3.3vw,3.3rem)] overflow-hidden rounded-2xl border border-primary p-[clamp(1.65rem,4.1vw,3.9rem)]">
             {/* Background image — covers entire container, blurred */}
             <Image
               src="/images/impact-matters-featured.png"
@@ -58,11 +58,11 @@ export default function ImpactMatters() {
 
             {/* ── Impact Cards (inside the container) ── */}
             <StaggerContainer
-              className="relative z-10 flex flex-col items-center gap-[clamp(1.5rem,5vw,4.75rem)]"
+              className="relative z-10 flex flex-col items-center gap-[clamp(1.23rem,4.1vw,3.9rem)]"
               stagger={0.15}
             >
               {/* Row 1 — Two cards side by side */}
-              <div className="grid w-full grid-cols-1 gap-[clamp(1.5rem,5vw,4.75rem)] sm:grid-cols-2">
+              <div className="grid w-full grid-cols-1 gap-[clamp(1.23rem,4.1vw,3.9rem)] sm:grid-cols-2">
                 <StaggerItem>
                   <ImpactCard
                     title={impactItems[0].title}

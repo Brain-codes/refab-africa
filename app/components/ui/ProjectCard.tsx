@@ -22,12 +22,12 @@ export default function ProjectCard({
   return (
     <div className="flex flex-col">
       {/* Header with title, description, and arrow button */}
-      <div className="mb-[clamp(2rem,3vw,3rem)] flex items-start justify-between gap-4">
-        <div className="flex flex-col gap-[clamp(0.75rem,1.5vw,1.25rem)]">
-          <h3 className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-semibold leading-design text-primary">
+      <div className="mb-[clamp(1.65rem,2.5vw,2.5rem)] flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-[clamp(0.62rem,1.2vw,1rem)]">
+          <h3 className="text-[clamp(1.23rem,2vw,2rem)] font-semibold leading-design text-primary">
             {title}
           </h3>
-          <p className="max-w-242 text-[clamp(0.875rem,1.5vw,1.2rem)] leading-design text-primary-deepest">
+          <p className="max-w-242 text-[clamp(0.72rem,1.2vw,1rem)] leading-design text-primary-deepest">
             {description}
           </p>
         </div>
@@ -35,15 +35,15 @@ export default function ProjectCard({
         {/* Arrow Icon Button */}
         <Link
           href={href}
-          className="flex h-[clamp(3rem,5vw,4.9375rem)] w-[clamp(3rem,5vw,4.9375rem)] shrink-0 items-center justify-center rounded-sm bg-primary transition-colors hover:bg-primary-dark"
+          className="flex h-[clamp(2.5rem,4.1vw,4rem)] w-[clamp(2.5rem,4.1vw,4rem)] shrink-0 items-center justify-center rounded-sm bg-primary transition-colors hover:bg-primary-dark"
           aria-label={`View ${title} project details`}
         >
-          <ArrowUpRight className="h-[clamp(1.5rem,2.5vw,2rem)] w-[clamp(1.5rem,2.5vw,2rem)] text-white" />
+          <ArrowUpRight className="h-[clamp(1.23rem,2vw,1.65rem)] w-[clamp(1.23rem,2vw,1.65rem)] text-white" />
         </Link>
       </div>
 
       {/* Images Grid */}
-      <div className="mb-[clamp(1.5rem,2.5vw,2rem)] grid grid-cols-1 gap-[clamp(1rem,2vw,2rem)] md:grid-cols-[1.53fr_1fr]">
+      <div className="mb-[clamp(1.23rem,2vw,1.65rem)] grid grid-cols-1 gap-[clamp(0.82rem,1.65vw,1.65rem)] md:grid-cols-[1.53fr_1fr]">
         <div className="relative aspect-[1.93] w-full overflow-hidden md:rounded-3xl rounded-sm border border-primary">
           <Image
             src={image1}
@@ -65,11 +65,11 @@ export default function ProjectCard({
       </div>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-[clamp(0.5rem,1vw,1rem)]">
+      <div className="flex flex-wrap gap-[clamp(0.41rem,0.82vw,0.82rem)]">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-sm border border-primary bg-primary-light px-[clamp(0.75rem,1.5vw,1.5rem)] py-[clamp(0.375rem,0.8vw,0.625rem)] text-[clamp(0.875rem,1vw,1rem)] font-medium text-primary"
+            className="rounded-sm border border-primary bg-primary-light px-[clamp(0.62rem,1.2vw,1.23rem)] py-[clamp(0.31rem,0.65vw,0.51rem)] text-[clamp(0.72rem,0.82vw,0.82rem)] font-medium text-primary"
           >
             {tag}
           </span>

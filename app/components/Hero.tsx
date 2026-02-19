@@ -98,13 +98,13 @@ export default function Hero() {
       </div>
 
       {/* Content — text centered vertically, indicator pinned to bottom */}
-      <div className="relative z-10 flex min-h-dvh flex-col px-6 sm:px-10 md:px-16 lg:px-[141px]">
+      <div className="relative z-10 flex min-h-dvh flex-col px-5 sm:px-8 md:px-12 lg:px-[115px]">
         {/* Spacer to push text to center */}
         <div className="flex-1" />
 
         {/* Text + Buttons — vertically centered, left-aligned */}
         <motion.div
-          className="flex md:w-[60%] w-full flex-col gap-[clamp(2.5rem,5vw,5rem)]"
+          className="flex md:w-[60%] w-full flex-col gap-[clamp(2rem,4.1vw,4.1rem)]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -112,7 +112,7 @@ export default function Hero() {
           {/* Text Group */}
           <div className="flex flex-col gap-4">
             <motion.h1
-              className="text-[clamp(2rem,5vw,4rem)] font-normal leading-design text-white"
+              className="text-[clamp(1.65rem,4.1vw,3.3rem)] font-normal leading-design text-white"
               variants={itemVariants}
             >
               Reimagining the{" "}
@@ -134,7 +134,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="max-w-[817px] text-[clamp(1rem,2vw,1.5rem)] font-normal leading-design text-white"
+              className="max-w-[670px] text-[clamp(0.82rem,1.65vw,1.23rem)] font-normal leading-design text-white"
               variants={itemVariants}
             >
               Transforming textile waste into meaningful products while

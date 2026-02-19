@@ -48,11 +48,11 @@ function StatItem({ stat, inView }: { stat: Stat; inView: boolean }) {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <span className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-design text-primary">
+      <span className="text-[clamp(2rem,4.1vw,3.3rem)] font-bold leading-design text-primary">
         {count}
         {stat.suffix}
       </span>
-      <span className="text-[clamp(0.875rem,1.5vw,1.25rem)] font-bold uppercase leading-design tracking-wide text-primary-deepest">
+      <span className="text-[clamp(0.72rem,1.2vw,1rem)] font-bold uppercase leading-design tracking-wide text-primary-deepest">
         {stat.label}
       </span>
     </div>
@@ -83,7 +83,7 @@ export default function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-primary-light px-6 py-[clamp(3rem,6vw,5rem)] sm:px-10 md:px-16 lg:px-[141px]"
+      className="w-full bg-primary-light px-5 py-[clamp(2.5rem,5vw,4.1rem)] sm:px-8 md:px-12 lg:px-[115px]"
     >
       <motion.div
         className="mx-auto grid max-w-[1728px] grid-cols-1 gap-10 sm:grid-cols-3"

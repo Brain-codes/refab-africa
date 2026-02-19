@@ -5,16 +5,16 @@ interface ImpactCardProps {
 
 export default function ImpactCard({ title, description }: ImpactCardProps) {
   return (
-    <div className="flex gap-[clamp(1rem,2vw,2rem)] rounded-default border border-primary-dark bg-overlay-white-15 p-[clamp(1rem,1.6vw,1.625rem)_clamp(0.75rem,1.2vw,1.1875rem)] backdrop-blur-sm">
+    <div className="flex gap-[clamp(0.82rem,1.65vw,1.65rem)] rounded-default border border-primary-dark bg-overlay-white-15 p-[clamp(0.82rem,1.3vw,1.33rem)_clamp(0.62rem,1vw,0.97rem)] backdrop-blur-sm">
       {/* Tear-drop icon */}
-      <div className="h-[49px] w-[49px] shrink-0 rounded-[651px_651px_0_651px] bg-primary" />
+      <div className="h-[40px] w-[40px] shrink-0 rounded-[535px_535px_0_535px] bg-primary" />
 
       {/* Text content */}
-      <div className="flex flex-col gap-[clamp(1rem,1.8vw,1.8125rem)]">
-        <h3 className="text-[clamp(1rem,1.5vw,1.5rem)] font-semibold uppercase leading-design text-primary">
+      <div className="flex flex-col gap-[clamp(0.82rem,1.5vw,1.49rem)]">
+        <h3 className="text-[clamp(0.82rem,1.2vw,1.23rem)] font-semibold uppercase leading-design text-primary">
           {title}
         </h3>
-        <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] font-normal leading-design text-white">
+        <p className="text-[clamp(0.72rem,1.2vw,1.23rem)] font-normal leading-design text-white">
           {description}
         </p>
       </div>

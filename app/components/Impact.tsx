@@ -30,21 +30,21 @@ const impactCards = [
 
 export default function Impact() {
   return (
-    <section className="relative w-full overflow-hidden bg-gray-light px-[5%] py-[clamp(4rem,8vw,7rem)]">
+    <section className="relative w-full overflow-hidden bg-gray-light px-[5%] py-[clamp(3.2rem,6.5vw,5.7rem)]">
       {/* TODO: Add decorative background vector (impact-bg-vector.svg) once downloaded from Figma */}
 
       <div className="relative z-10 mx-auto max-w-[1728px]">
         {/* ── Header Row ── */}
         <FadeIn direction="up" as="div">
-          <div className="flex flex-wrap items-center justify-between gap-[clamp(1.5rem,3vw,2rem)]">
-            <div className="flex max-w-[54rem] flex-col gap-[1rem]">
-              <h2 className="text-[clamp(2rem,4.5vw,3.1rem)] font-medium leading-design text-primary-deepest">
+          <div className="flex flex-wrap items-center justify-between gap-[clamp(1.23rem,2.5vw,1.65rem)]">
+            <div className="flex max-w-[44rem] flex-col gap-[0.82rem]">
+              <h2 className="text-[clamp(1.65rem,3.7vw,2.5rem)] font-medium leading-design text-primary-deepest">
                 Turning Textile <br className="md:flex hidden" /> Waste Into{" "}
                 <span className="font-extrabold text-primary not-italic">
                   IMPACT
                 </span>
               </h2>
-              <p className="text-[clamp(0.875rem,1.5vw,1.2rem)] leading-design text-primary-deepest">
+              <p className="text-[clamp(0.72rem,1.2vw,1rem)] leading-design text-primary-deepest">
                 We transforms discarded textiles into functional products,
                 creative solutions, and opportunities that benefit both people
                 and the planet.
@@ -59,7 +59,7 @@ export default function Impact() {
 
         {/* ── Bento Card Grid ── */}
         <StaggerContainer
-          className="mt-[clamp(2rem,4vw,3.5rem)] grid grid-cols-1 gap-[clamp(1rem,1.6vw,1.625rem)] sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-[clamp(1.65rem,3.3vw,2.87rem)] grid grid-cols-1 gap-[clamp(0.82rem,1.3vw,1.33rem)] sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.15}
         >
           {/* Card 1 — Full Image */}
@@ -90,11 +90,11 @@ export default function Impact() {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.5rem,3vw,3rem)]">
-                <h3 className="text-[clamp(1.5rem,2.8vw,2.5rem)] font-semibold leading-design text-primary">
+              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.23rem,2.5vw,2.5rem)]">
+                <h3 className="text-[clamp(1.23rem,2.3vw,2rem)] font-semibold leading-design text-primary">
                   {impactCards[0].title}
                 </h3>
-                <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] leading-design text-primary-deepest">
+                <p className="text-[clamp(0.72rem,1.2vw,1.23rem)] leading-design text-primary-deepest">
                   {impactCards[0].description}
                 </p>
               </div>
@@ -116,11 +116,11 @@ export default function Impact() {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.5rem,3vw,3rem)]">
-                <h3 className="text-[clamp(1.5rem,2.8vw,2.5rem)] font-semibold leading-design text-primary">
+              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.23rem,2.5vw,2.5rem)]">
+                <h3 className="text-[clamp(1.23rem,2.3vw,2rem)] font-semibold leading-design text-primary">
                   {impactCards[1].title}
                 </h3>
-                <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] leading-design text-primary-deepest">
+                <p className="text-[clamp(0.72rem,1.2vw,1.23rem)] leading-design text-primary-deepest">
                   {impactCards[1].description}
                 </p>
               </div>
@@ -155,11 +155,11 @@ export default function Impact() {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.5rem,3vw,3rem)]">
-                <h3 className="text-[clamp(1.5rem,2.8vw,2.5rem)] font-semibold leading-design text-primary">
+              <div className="relative z-10 flex h-full flex-col justify-between p-[clamp(1.23rem,2.5vw,2.5rem)]">
+                <h3 className="text-[clamp(1.23rem,2.3vw,2rem)] font-semibold leading-design text-primary">
                   {impactCards[2].title}
                 </h3>
-                <p className="text-[clamp(0.875rem,1.5vw,1.5rem)] leading-design text-primary-deepest">
+                <p className="text-[clamp(0.72rem,1.2vw,1.23rem)] leading-design text-primary-deepest">
                   {impactCards[2].description}
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function Impact() {
 
         {/* ── Bottom CTA Buttons ── */}
         <FadeIn direction="up" as="div" delay={0.2}>
-          <div className="mt-[clamp(2rem,4vw,3.5rem)] flex flex-wrap items-center justify-center gap-[clamp(1rem,2.2vw,2.1875rem)]">
+          <div className="mt-[clamp(1.65rem,3.3vw,2.87rem)] flex flex-wrap items-center justify-center gap-[clamp(0.82rem,1.8vw,1.8rem)]">
             <Button variant="primary-dark" href="/portfolio">
               See How We Create Impact
             </Button>

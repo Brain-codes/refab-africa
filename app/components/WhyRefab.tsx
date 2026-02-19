@@ -5,19 +5,19 @@ import { FadeIn } from "./animations";
 
 export default function WhyRefab() {
   return (
-    <section className="relative w-full overflow-hidden bg-primary-deepest px-[5%] py-[clamp(4rem,8vw,7rem)]">
+    <section className="relative w-full overflow-hidden bg-primary-deepest px-[5%] py-[clamp(3.2rem,6.5vw,5.7rem)]">
       <div className="mx-auto max-w-432">
-        <div className="grid grid-cols-1 items-center gap-[clamp(2rem,5vw,4.75rem)] lg:grid-cols-[1.37fr_1fr]">
+        <div className="grid grid-cols-1 items-center gap-[clamp(1.65rem,4.1vw,3.9rem)] lg:grid-cols-[1.37fr_1fr]">
           {/* ── Left Column: Text Content ── */}
           <FadeIn direction="up" as="div">
-            <div className="flex flex-col gap-[clamp(1.5rem,3vw,2.5rem)]">
+            <div className="flex flex-col gap-[clamp(1.23rem,2.5vw,2rem)]">
               {/* Heading */}
-              <h2 className="text-[clamp(2rem,4.5vw,3.1rem)] font-medium leading-design text-white">
+              <h2 className="text-[clamp(1.65rem,3.7vw,2.5rem)] font-medium leading-design text-white">
                 Why  <span className="font-bold uppercase text-primary"> Refab africa </span>
               </h2>
 
               {/* Body Text */}
-              <div className="flex flex-col gap-4 text-[clamp(0.875rem,1.5vw,1.2rem)] leading-design text-white">
+              <div className="flex flex-col gap-4 text-[clamp(0.72rem,1.2vw,1rem)] leading-design text-white">
                 <p>
                   Refab Africa was created from the belief that waste is not
                   the end of a story, but the beginning of a new one. In a

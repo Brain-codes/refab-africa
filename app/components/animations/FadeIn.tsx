@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { motion, type Variants } from "motion/react";
 import type { ReactNode } from "react";
 
@@ -42,7 +43,7 @@ export default function FadeIn({
     },
   };
 
-  const MotionComponent = motion.create(as);
+  const MotionComponent = useMemo(() => motion.create(as), [as]);
 
   return (
     <MotionComponent

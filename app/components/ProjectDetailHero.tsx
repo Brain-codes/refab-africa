@@ -53,16 +53,16 @@ export default function ProjectDetailHero({
       </div>
 
       {/* Content — vertically & horizontally centered */}
-      <div className="relative z-10 flex min-h-dvh items-center justify-center px-6 sm:px-10 md:px-16 lg:px-[141px]">
+      <div className="relative z-10 flex min-h-dvh items-center justify-center px-5 sm:px-8 md:px-12 lg:px-[115px]">
         <motion.div
-          className="flex w-full max-w-[900px] flex-col items-center gap-4 text-center"
+          className="flex w-full max-w-[740px] flex-col items-center gap-4 text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Title */}
           <motion.h1
-            className="text-[clamp(2rem,5vw,4rem)] font-semibold leading-design text-white"
+            className="text-[clamp(1.65rem,4.1vw,3.3rem)] font-semibold leading-design text-white"
             variants={itemVariants}
           >
             {title}
@@ -70,7 +70,7 @@ export default function ProjectDetailHero({
 
           {/* Location */}
           <motion.p
-            className="text-[clamp(1rem,2vw,1.5rem)] font-normal leading-design text-white"
+            className="text-[clamp(0.82rem,1.65vw,1.23rem)] font-normal leading-design text-white"
             variants={itemVariants}
           >
             Location: {location}
@@ -78,7 +78,7 @@ export default function ProjectDetailHero({
 
           {/* Date */}
           <motion.p
-            className="text-[clamp(1rem,2vw,1.5rem)] font-normal leading-design text-white"
+            className="text-[clamp(0.82rem,1.65vw,1.23rem)] font-normal leading-design text-white"
             variants={itemVariants}
           >
             Date: {date}

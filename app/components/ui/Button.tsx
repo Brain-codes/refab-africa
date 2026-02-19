@@ -21,7 +21,7 @@ const variantStyles: Record<ButtonVariant, string> = {
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center rounded-sm py-[clamp(0.875rem,1.5vw,1.125rem)] px-[clamp(2rem,4vw,3.1875rem)] text-[clamp(0.875rem,1.2vw,1.25rem)] font-bold leading-design transition-colors";
+  "inline-flex items-center justify-center rounded-sm py-[clamp(0.72rem,1.23vw,0.92rem)] px-[clamp(1.65rem,3.3vw,2.6rem)] text-[clamp(0.72rem,1vw,1rem)] font-bold leading-design transition-colors";
 
 export default function Button({
   variant = "primary",

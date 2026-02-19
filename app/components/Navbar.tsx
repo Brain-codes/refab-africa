@@ -12,7 +12,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Portfolio", href: "/portfolio" },
+  { name: "Portfolio", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -51,7 +51,7 @@ export default function Navbar(): React.JSX.Element {
         hidden && !isOpen ? "-translate-y-full" : "translate-y-0"
       } ${scrolled ? "bg-primary-deepest" : "bg-transparent"}`}
     >
-      <div className="mx-auto flex max-w-[1728px] items-center justify-between px-6 py-7 sm:px-10 md:px-16 lg:px-[141px]">
+      <div className="mx-auto flex max-w-[1728px] items-center justify-between px-5 py-5 sm:px-8 md:px-12 lg:px-[115px]">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -59,13 +59,13 @@ export default function Navbar(): React.JSX.Element {
             alt="Refab Africa Logo"
             width={86}
             height={82}
-            className="h-[50px] w-[52px] md:h-[65px] md:w-[68px] lg:h-[82px] lg:w-[86px]"
+            className="h-[40px] w-[42px] md:h-[53px] md:w-[56px] lg:h-[67px] lg:w-[71px]"
             priority
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden items-center gap-8 md:flex lg:gap-[69px]">
+        <ul className="hidden items-center gap-6 md:flex lg:gap-[56px]">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link

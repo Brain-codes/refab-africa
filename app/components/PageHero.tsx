@@ -51,9 +51,9 @@ export default function PageHero({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-[clamp(8rem,15vw,12rem)] sm:px-10 md:px-16 lg:px-[141px]">
+      <div className="relative z-10 px-6 py-[clamp(6.5rem,12.5vw,10rem)] sm:px-10 md:px-16 lg:px-[141px]">
         <motion.div
-          className="mx-auto flex max-w-432 flex-col gap-[clamp(1rem,2vw,1.5rem)]"
+          className="mx-auto flex max-w-432 flex-col gap-[clamp(0.82rem,1.65vw,1.23rem)]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -68,7 +68,7 @@ export default function PageHero({
 
           {/* Title */}
           <motion.h1
-            className="max-w-[932px] text-[clamp(2rem,5vw,4rem)] font-normal leading-design text-white"
+            className="max-w-[932px] text-[clamp(1.65rem,4.1vw,3.3rem)] font-normal leading-design text-white"
             variants={itemVariants}
           >
             {title}
@@ -76,7 +76,7 @@ export default function PageHero({
 
           {/* Description */}
           <motion.p
-            className="max-w-[817px] text-[clamp(1rem,2vw,1.5rem)] font-normal leading-design text-white"
+            className="max-w-[817px] text-[clamp(0.82rem,1.65vw,1.23rem)] font-normal leading-design text-white"
             variants={itemVariants}
           >
             {description}

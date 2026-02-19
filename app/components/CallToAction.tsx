@@ -14,17 +14,17 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="mx-[5%] overflow-hidden rounded-sm md:rounded-l bg-primary-deepest py-[clamp(4rem,8vw,7rem)] my-20">
+    <section className="mx-[5%] overflow-hidden rounded-sm md:rounded-l bg-primary-deepest py-[clamp(3.2rem,6.5vw,5.7rem)] my-20">
       <div className="mx-auto max-w-321 px-[5%]">
         <FadeIn direction="up" as="div">
-          <div className="flex flex-col items-center gap-[clamp(2rem,4vw,3rem)] text-center">
+          <div className="flex flex-col items-center gap-[clamp(1.65rem,3.3vw,2.5rem)] text-center">
             {/* Title */}
-            <h2 className="text-[clamp(2rem,4.5vw,3.1rem)] font-semibold leading-design text-primary">
+            <h2 className="text-[clamp(1.65rem,3.7vw,2.5rem)] font-semibold leading-design text-primary">
               Ready to journey with us?
             </h2>
 
             {/* Description */}
-            <p className="text-[clamp(0.875rem,1.5vw,1.2rem)] leading-design text-white">
+            <p className="text-[clamp(0.72rem,1.2vw,1rem)] leading-design text-white">
               Refab Africa exists to transform textile waste into meaningful
               impact, but lasting change is never built alone. Whether you&apos;re a
               creative, brand, organization, or individual who believes in
@@ -35,7 +35,7 @@ export default function CallToAction() {
             {/* Email Form */}
             <form
               onSubmit={handleSubmit}
-              className="flex w-full max-w-213 flex-col gap-[clamp(0.75rem,1.5vw,1rem)] sm:flex-row"
+              className="flex w-full max-w-213 flex-col gap-[clamp(0.62rem,1.2vw,0.82rem)] sm:flex-row"
             >
               <input
                 type="email"
@@ -43,7 +43,7 @@ export default function CallToAction() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 rounded-sm border border-white bg-white/12 px-[clamp(1rem,1.5vw,1.25rem)] py-[clamp(0.875rem,1.5vw,1.125rem)] text-[clamp(0.875rem,1.2vw,1.25rem)] leading-design text-white placeholder-white/70 outline-none transition-colors focus:border-primary focus:bg-white/20"
+                className="flex-1 rounded-sm border border-white bg-white/12 px-[clamp(0.82rem,1.2vw,1rem)] py-[clamp(0.72rem,1.2vw,0.92rem)] text-[clamp(0.72rem,1vw,1rem)] leading-design text-white placeholder-white/70 outline-none transition-colors focus:border-primary focus:bg-white/20"
               />
 
               <Button variant="outline" type="submit">

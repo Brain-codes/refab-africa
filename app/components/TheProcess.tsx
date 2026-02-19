@@ -34,22 +34,22 @@ const processSteps = [
 
 export default function TheProcess() {
   return (
-    <section className="w-full overflow-hidden bg-primary-light px-[5%] py-[clamp(4rem,8vw,7rem)]">
+    <section className="w-full overflow-hidden bg-primary-light px-[5%] py-[clamp(3.2rem,6.5vw,5.7rem)]">
       <div className="mx-auto max-w-[1728px]">
         {/* ── Section Header ── */}
         <FadeIn direction="up" as="div">
-          <div className="flex flex-col items-center gap-[1rem] text-center">
+          <div className="flex flex-col items-center gap-[0.82rem] text-center">
             {/* Badge */}
-            <span className="inline-block rounded-[1.25rem] bg-primary px-[2rem] py-[0.3125rem] text-[0.875rem] font-medium text-white">
+            <span className="inline-block rounded-[1rem] bg-primary px-[1.65rem] py-[0.26rem] text-[0.72rem] font-medium text-white">
               The Process
             </span>
             {/* Title */}
-            <h2 className="text-[clamp(2rem,4.5vw,3.625rem)] font-medium leading-design text-primary-deepest">
+            <h2 className="text-[clamp(1.65rem,3.7vw,3rem)] font-medium leading-design text-primary-deepest">
               How We Create{" "}
               <span className="font-bold uppercase text-primary">IMPACT</span>
             </h2>
             {/* Description */}
-            <p className="max-w-[54.5rem] text-[clamp(0.875rem,1.5vw,1.5rem)] leading-design text-primary-deepest">
+            <p className="max-w-[44.7rem] text-[clamp(0.72rem,1.2vw,1.23rem)] leading-design text-primary-deepest">
               From discarded textiles to meaningful outcomes, our process is
               built on intention, collaboration, and sustainability.
             </p>
@@ -57,18 +57,20 @@ export default function TheProcess() {
         </FadeIn>
 
         {/* ── Process Steps (Zigzag) ── */}
-        <div className="mt-[clamp(3rem,6vw,5rem)] flex flex-col">
+        <div className="mt-[clamp(2.5rem,5vw,4.1rem)] flex flex-col w-full">
           {processSteps.map((step, index) => {
             const isOdd = step.step % 2 !== 0;
             const isLast = index === processSteps.length - 1;
 
             return (
               <FadeIn key={step.step} direction="up" delay={index * 0.1}>
-                {/* Desktop: 2-col grid with order swap for zigzag */}
-                <div className="grid grid-cols-1 items-center lg:grid-cols-[1fr_2fr]">
-                  <div
-                    className={`flex justify-center py-[clamp(1.5rem,3vw,2rem)] ${isOdd ? "lg:order-1" : "lg:order-2"}`}
-                  >
+                {/* Desktop: flex with direction swap for zigzag */}
+                <div className={`flex flex-col w-full items-center ${
+                  isLast 
+                    ? (isOdd ? "lg:flex-row lg:justify-start" : "lg:flex-row lg:justify-end")
+                    : (isOdd ? "lg:flex-row" : "lg:flex-row-reverse")
+                }`}>
+                  <div className={`flex justify-center py-[clamp(1.23rem,2.5vw,1.65rem)] ${isLast ? "mx-20" : "lg:flex-1"}`}>
                     <ProcessStep
                       step={step.step}
                       title={step.title}
@@ -76,9 +78,7 @@ export default function TheProcess() {
                     />
                   </div>
                   {!isLast && (
-                    <div
-                      className={`hidden lg:flex lg:items-center ${isOdd ? "lg:order-2" : "lg:order-1"}`}
-                    >
+                    <div className="hidden lg:flex lg:items-center lg:flex-[2]">
                       <ProcessCurve index={index as 0 | 1 | 2} />
                     </div>
                   )}
@@ -87,7 +87,7 @@ export default function TheProcess() {
                 {/* Mobile/Tablet: vertical dashed connector */}
                 {!isLast && (
                   <div className="flex justify-center lg:hidden">
-                    <div className="h-[clamp(3rem,6vw,5rem)] border-l-[4px] border-dashed border-primary-82" />
+                    <div className="h-[clamp(2.5rem,5vw,4.1rem)] border-l-[3px] border-dashed border-primary-82" />
                   </div>
                 )}
               </FadeIn>
@@ -97,8 +97,8 @@ export default function TheProcess() {
 
         {/* ── Bottom CTA Banner ── */}
         <FadeIn direction="up" as="div" delay={0.2}>
-          <div className="mx-auto mt-[clamp(3rem,6vw,5rem)] flex w-full flex-col items-center gap-[clamp(1rem,2vw,1.5625rem)] md:rounded-[2.25rem] rounded-sm bg-primary-deepest px-[5%] py-[clamp(2.5rem,5vw,4rem)] text-center lg:w-[71%]">
-            <p className="text-[clamp(1rem,1.5vw,1.5rem)] font-medium leading-design text-white">
+          <div className="mx-auto mt-[clamp(2.5rem,5vw,4.1rem)] flex w-full flex-col items-center gap-[clamp(0.82rem,1.65vw,1.28rem)] md:rounded-[1.85rem] rounded-sm bg-primary-deepest px-[5%] py-[clamp(2rem,4.1vw,3.3rem)] text-center lg:w-[71%]">
+            <p className="text-[clamp(0.82rem,1.2vw,1.23rem)] font-medium leading-design text-white">
               Every step is guided by sustainability, creativity, and
               people-first thinking.
             </p>

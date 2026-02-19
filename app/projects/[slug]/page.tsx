@@ -2,18 +2,20 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, projects } from "../../lib/projects";
 import ProjectDetailHero from "../../components/ProjectDetailHero";
 import ProjectOverview from "../../components/ProjectOverview";
+import ProjectNarrative from "../../components/ProjectNarrative";
 import CallToAction from "../../components/CallToAction";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   return (
@@ -25,6 +27,12 @@ export default function ProjectDetailPage({
         image={project.image1}
       />
       <ProjectOverview overview={project.overview} gallery={project.gallery} />
+      <ProjectNarrative
+        challenge={project.challenge}
+        approach={project.approach}
+        impact={project.impact}
+        keyTakeaway={project.keyTakeaway}
+      />
       <CallToAction />
     </main>
   );

@@ -56,20 +56,20 @@ const socialLinks = [
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="w-full bg-primary-deepest px-[5%] pt-[clamp(3rem,6vw,5.5rem)] pb-[clamp(2rem,4vw,3rem)]">
+    <footer className="w-full bg-primary-deepest px-[5%] pt-[clamp(2.5rem,5vw,4.5rem)] pb-[clamp(1.65rem,3.3vw,2.5rem)]">
       <div className="mx-auto max-w-[1728px]">
         {/* Main grid */}
-        <div className="grid grid-cols-1 gap-[clamp(2.5rem,5vw,4rem)] lg:grid-cols-[1fr_auto_auto]">
+        <div className="grid grid-cols-1 gap-[clamp(2rem,4.1vw,3.3rem)] lg:grid-cols-[1fr_auto_auto]">
           {/* Left: Logo + tagline + social */}
           <FadeIn direction="up" delay={0}>
-            <div className="flex flex-col gap-[clamp(1.5rem,3vw,2rem)]">
+            <div className="flex flex-col gap-[clamp(1.23rem,2.5vw,1.65rem)]">
               <Link href="/" aria-label="Refab Africa home">
                 <Image
                   src="/logo.svg"
                   alt="Refab Africa Logo"
                   width={86}
                   height={82}
-                  className="h-[60px] w-auto"
+                  className="h-[49px] w-auto"
                 />
               </Link>
 
@@ -79,7 +79,7 @@ export default function Footer(): React.JSX.Element {
               </p>
 
               {/* Social icons */}
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
                 {socialLinks.map(({ name, href, icon: Icon }) => (
                   <a
                     key={name}
@@ -87,7 +87,7 @@ export default function Footer(): React.JSX.Element {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={name}
-                    className="flex h-[31px] w-[31px] items-center justify-center text-white transition-colors duration-200 hover:text-primary"
+                    className="flex h-[25px] w-[25px] items-center justify-center text-white transition-colors duration-200 hover:text-primary"
                   >
                     <Icon />
                   </a>
@@ -98,12 +98,12 @@ export default function Footer(): React.JSX.Element {
 
           {/* Middle: Explore */}
           <FadeIn direction="up" delay={0.1}>
-            <div className="flex flex-col gap-[clamp(1rem,2vw,1.5rem)]">
+            <div className="flex flex-col gap-[clamp(0.82rem,1.65vw,1.23rem)]">
               <span className="font-clash text-md font-bold leading-design text-primary">
                 Explore
               </span>
               <StaggerContainer
-                className="flex flex-col gap-[clamp(0.75rem,1.5vw,1rem)]"
+                className="flex flex-col gap-[clamp(0.62rem,1.2vw,0.82rem)]"
                 stagger={0.06}
               >
                 {exploreLinks.map(({ name, href }) => (
@@ -122,12 +122,12 @@ export default function Footer(): React.JSX.Element {
 
           {/* Right: Get Involved */}
           <FadeIn direction="up" delay={0.2}>
-            <div className="flex flex-col gap-[clamp(1rem,2vw,1.5rem)]">
+            <div className="flex flex-col gap-[clamp(0.82rem,1.65vw,1.23rem)]">
               <span className="font-clash text-md font-bold leading-design text-primary">
                 Get Involved
               </span>
               <StaggerContainer
-                className="flex flex-col gap-[clamp(0.75rem,1.5vw,1rem)]"
+                className="flex flex-col gap-[clamp(0.62rem,1.2vw,0.82rem)]"
                 stagger={0.06}
               >
                 {getInvolvedLinks.map(({ name, href }) => (
@@ -146,7 +146,7 @@ export default function Footer(): React.JSX.Element {
         </div>
 
         {/* Divider */}
-        <hr className="my-[clamp(2rem,4vw,3rem)] border-t border-white opacity-[0.37]" />
+        <hr className="my-[clamp(1.65rem,3.3vw,2.5rem)] border-t border-white opacity-[0.37]" />
 
         {/* Bottom bar */}
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
@@ -163,7 +163,7 @@ export default function Footer(): React.JSX.Element {
             </Link>
             <span
               className="font-clash font-normal leading-none text-primary"
-              style={{ fontSize: "clamp(2rem,4vw,4rem)" }}
+              style={{ fontSize: "clamp(1.65rem,3.3vw,3.3rem)" }}
               aria-hidden="true"
             >
               •
