@@ -33,8 +33,9 @@ export default function ProjectOverview({
     [autoplay.current],
   );
 
-  // ── Progress using Embla Autoplay plugin's timeUntilNext() ────────
+  // ── Progress + current slide ──────────────────────────────────────
   const [progress, setProgress] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const rafId = useRef<number | null>(null);
 
   const startProgressTick = useCallback((api: typeof emblaApi) => {
@@ -58,9 +59,9 @@ export default function ProjectOverview({
   useEffect(() => {
     if (!emblaApi) return;
 
-    // Reset progress on every slide change, restart tick
     const onSelect = () => {
       setProgress(0);
+      setSelectedIndex(emblaApi.selectedScrollSnap());
       startProgressTick(emblaApi);
     };
 
@@ -77,81 +78,117 @@ export default function ProjectOverview({
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  return (
-    <section className="w-full bg-background pb-[clamp(3.2rem,6.5vw,5.7rem)]">
-      <div className="  relative">
+  const pad = (n: number) => String(n).padStart(2, "0");
 
-        {/* ── Overview Card ── */}
-        <div className="px-[5%] h-fit absolute top-[clamp(-33rem,-24.5vw,-16.4rem)] left-1/2 -translate-x-1/2 w-full">
+  return (
+    <section className="w-full">
+
+      {/* ── Dark bridge strip — visually continues the hero into this section ── */}
+      <div className="bg-primary-deepest px-[5%] pb-[clamp(3rem,6vw,5rem)] pt-[clamp(2.5rem,5vw,4rem)]">
+        <div className="mx-auto max-w-[1728px]">
           <FadeIn direction="up">
-            <div className="rounded-l bg-[#dff2dc] p-[clamp(1.65rem,4.1vw,3.3rem)]">
-              <h2 className="mb-[clamp(0.82rem,1.65vw,1.23rem)] text-[clamp(1.65rem,3.7vw,2.5rem)] font-normal leading-design text-primary-deepest">
-                Project <span className="font-extrabold text-primary">OVERVIEW</span>
-              </h2>
-              <p className="max-w-[740px] text-[clamp(0.72rem,1.2vw,1rem)] font-normal leading-design text-primary-deepest">
-                {overview}
-              </p>
+            <div className="flex overflow-hidden rounded-l">
+
+              {/* Left accent strip — bright green against the dark bg */}
+              <div className="flex flex-shrink-0 flex-col items-center justify-between bg-primary px-[clamp(0.82rem,1.5vw,1.23rem)] py-[clamp(1.65rem,4.1vw,3.3rem)]">
+                <span className="text-[clamp(1.2rem,2vw,1.65rem)] font-extrabold leading-none text-white">
+                  01
+                </span>
+                <span
+                  className="text-[clamp(0.55rem,0.7vw,0.68rem)] font-semibold uppercase tracking-[0.18em] text-white/80"
+                  style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+                >
+                  Overview
+                </span>
+              </div>
+
+              {/* Right content area */}
+              <div className="flex-1 bg-[#dff2dc] p-[clamp(1.65rem,4.1vw,3.3rem)]">
+                <h2 className="mb-[clamp(0.82rem,1.65vw,1.23rem)] text-[clamp(1.65rem,3.7vw,2.5rem)] font-normal leading-design text-primary-deepest">
+                  Project{" "}
+                  <span className="font-extrabold text-primary">OVERVIEW</span>
+                </h2>
+                <p className="max-w-[740px] text-[clamp(0.72rem,1.2vw,1rem)] font-normal leading-design text-primary-deepest">
+                  {overview}
+                </p>
+              </div>
+
             </div>
           </FadeIn>
         </div>
+      </div>
 
-        {/* ── Gallery ── */}
-        <div className="mt-[clamp(12.3rem,16.4vw,20.5rem)] overflow-x-hidden">
+      {/* ── Gallery section ── */}
+      <div className="bg-background pb-[clamp(3.2rem,6.5vw,5.7rem)] pt-[clamp(2.5rem,5vw,4rem)] overflow-x-hidden">
 
-          {/* Heading */}
-          <FadeIn direction="up">
-            <h2 className="text-center md:mt-0 mt-10 text-[clamp(1.65rem,3.7vw,2.5rem)] font-normal leading-design text-primary-deepest mb-[clamp(1.23rem,2.5vw,2rem)]">
-              Our <span className="font-extrabold text-primary uppercase">Gallery</span>
+        {/* Editorial heading with horizontal rules */}
+        <FadeIn direction="up">
+          <div className="flex items-center gap-[clamp(0.82rem,2vw,1.65rem)] px-[5%] mb-[clamp(1.23rem,2.5vw,2rem)]">
+            <div className="h-[1px] flex-1 bg-primary/20" />
+            <h2 className="whitespace-nowrap text-[clamp(1.65rem,3.7vw,2.5rem)] font-normal leading-design text-primary-deepest">
+              Our{" "}
+              <span className="font-extrabold uppercase text-primary">
+                Gallery
+              </span>
             </h2>
-          </FadeIn>
+            <div className="h-[1px] flex-1 bg-primary/20" />
+          </div>
+        </FadeIn>
 
-          {/* Full-width carousel — bleeds edge to edge */}
-          <div className="w-full relative">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex">
-                {gallery.map((src, index) => (
-                  <div
-                    key={index}
-                    className="relative flex-shrink-0 aspect-[442/594]
-                               w-[80%] sm:w-[55%] md:w-[30%] lg:w-[21%]
-                               pl-3 sm:pl-4"
-                  >
-                    <div className="relative h-full w-full overflow-hidden">
-                      <Image
-                        src={src}
-                        alt={`Gallery image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 55vw, 30vw"
-                        draggable={false}
-                      />
-                    </div>
+        {/* Full-width carousel — bleeds edge to edge */}
+        <div className="w-full relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {gallery.map((src, index) => (
+                <div
+                  key={index}
+                  className="relative flex-shrink-0 aspect-[442/594]
+                             w-[80%] sm:w-[55%] md:w-[30%] lg:w-[21%]
+                             pl-3 sm:pl-4"
+                >
+                  <div className="relative h-full w-full overflow-hidden">
+                    <Image
+                      src={src}
+                      alt={`Gallery image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 80vw, (max-width: 1024px) 55vw, 30vw"
+                      draggable={false}
+                    />
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Controls: arrows left, progress right */}
-          <div className="mt-6 flex items-center justify-between px-[5%]">
-            <div className="flex items-center gap-3">
-              <button
-                onClick={scrollPrev}
-                aria-label="Previous slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary text-primary transition-colors hover:bg-primary hover:text-white"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={scrollNext}
-                aria-label="Next slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary text-primary transition-colors hover:bg-primary hover:text-white"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
+        {/* Controls: arrows + slide counter + progress */}
+        <div className="mt-6 flex items-center justify-between px-[5%]">
+          {/* Arrows */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={scrollPrev}
+              aria-label="Previous slide"
+              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary text-primary transition-colors hover:bg-primary hover:text-white"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={scrollNext}
+              aria-label="Next slide"
+              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary text-primary transition-colors hover:bg-primary hover:text-white"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
 
-            {/* Progress bar driven by autoplay.timeUntilNext() */}
+          {/* Slide counter + progress bar */}
+          <div className="flex items-center gap-[clamp(0.82rem,2vw,1.65rem)]">
+            <span className="text-[clamp(0.72rem,0.9vw,0.88rem)] font-semibold tabular-nums text-primary-deepest">
+              <span className="text-primary">{pad(selectedIndex + 1)}</span>
+              <span className="mx-1 text-primary-deepest/30">/</span>
+              {pad(gallery.length)}
+            </span>
             <div className="h-[3px] w-[clamp(98px,16.5vw,213px)] overflow-hidden rounded-full bg-primary/20">
               <div
                 className="h-full bg-primary transition-none"
@@ -159,8 +196,8 @@ export default function ProjectOverview({
               />
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
   );

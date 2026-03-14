@@ -34,7 +34,7 @@ const DOT_POSITIONS = [12.5, 37.5, 62.5, 87.5];
 function JourneyItem({ month, description }: { month: string; description: string }) {
   return (
     <>
-      <h3 className="text-[clamp(1.44rem,2.9vw,3rem)] font-bold leading-design text-primary-deepest capitalize">
+      <h3 className="text-[clamp(1.44rem,2.9vw,3rem)] font-bold leading-design text-primary-deepest capitalize uppercase">
         {month}
       </h3>
       <p className="mt-[clamp(0.21rem,0.41vw,0.41rem)] text-[clamp(0.72rem,1vw,1rem)] font-normal leading-design text-black">
@@ -55,8 +55,8 @@ export default function OurJourney() {
 
         {/* Heading */}
         <FadeIn direction="up">
-          <h2 className="mb-[clamp(2.5rem,5vw,4.9rem)] text-[clamp(1.65rem,3.3vw,3rem)] font-normal leading-design text-primary-deepest">
-            Our Q1 Journey
+          <h2 className="mb-[clamp(2.5rem,5vw,4.9rem)] text-[clamp(1.65rem,3.3vw,3rem)] font-medium leading-design text-primary-deepest">
+            Our <span className="font-extrabold text-primary uppercase"> Q1 Journey </span>
           </h2>
         </FadeIn>
 

@@ -39,6 +39,8 @@ const stats = [
 const partners = [
   { image: "/images/brand-one-barrow.png", name: "One Barrow", width: 57, height: 57 },
   { image: "/images/brand-ta-community.png", name: "TA Community", width: 96, height: 65 },
+  { image: "/images/odyssey-foundation-logo.png", name: "", width: 157, height: 57 },
+  { image: "/images/brand-ta-community.png", name: "TA Community", width: 96, height: 65  },
 ];
 
 // ── Stat card ─────────────────────────────────────────────────────────────────
@@ -97,8 +99,8 @@ export default function AboutSection() {
 
           {/* ── Left: heading ── */}
           <FadeIn direction="up">
-            <h2 className="text-[clamp(1.65rem,3.3vw,3rem)] font-normal leading-design text-primary-deepest">
-              About Refab Africa
+            <h2 className="text-[clamp(1.65rem,3.3vw,3rem)] font-medium leading-design text-primary-deepest">
+              About <span className="font-extrabold text-primary uppercase"> Refab Africa </span>
             </h2>
           </FadeIn>
 
@@ -140,9 +142,11 @@ export default function AboutSection() {
                       height={height}
                       className="object-contain"
                     />
-                    <span className="text-[0.9375rem] font-normal text-black">
-                      {name}
-                    </span>
+                    {name ? (
+                      <span className="text-[0.9375rem] font-normal text-black">
+                        {name}
+                      </span>
+                    ) : null}
                   </div>
                 ))}
               </div>

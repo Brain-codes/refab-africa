@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Button from "./ui/Button";
 import { FadeIn } from "./animations";
 
 const faqs = [
@@ -40,8 +41,8 @@ export default function FAQ() {
 
         {/* ── Header ── */}
         <FadeIn direction="up" className="flex flex-col items-center gap-[clamp(0.62rem,1.2vw,0.82rem)] text-center">
-          <h2 className="text-[clamp(1.65rem,3.3vw,3rem)] font-normal leading-design text-primary-deepest">
-            Frequently Asked Questions
+          <h2 className="text-[clamp(1.65rem,3.3vw,3rem)] font-medium leading-design text-primary-deepest">
+            Frequently Asked <span className="font-extrabold text-primary uppercase">Questions </span>
           </h2>
           <p className="max-w-[1018px] text-[clamp(0.72rem,1vw,1rem)] font-normal leading-design text-foreground">
             Here are some common questions about our services to help you understand Refab Africa better.
@@ -93,6 +94,14 @@ export default function FAQ() {
               </div>
             );
           })}
+        </FadeIn>
+
+        {/* ── Closing CTAs ── */}
+        <FadeIn direction="up" delay={0.3} as="div">
+          <div className="mx-auto mt-[clamp(2rem,3.3vw,3rem)] flex max-w-[1062px] flex-wrap justify-center gap-3">
+            <Button variant="primary" href="/donate">Donate Textiles</Button>
+            <Button variant="outline" href="/agent">Become an Agent</Button>
+          </div>
         </FadeIn>
 
       </div>

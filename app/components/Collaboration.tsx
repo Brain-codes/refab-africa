@@ -1,6 +1,7 @@
 "use client";
 
 import BrandCard from "./ui/BrandCard";
+import Button from "./ui/Button";
 import { FadeIn, StaggerContainer, StaggerItem } from "./animations";
 
 const partners = [
@@ -54,6 +55,14 @@ export default function Collaboration() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* ── Join CTAs ── */}
+        <FadeIn direction="up" delay={0.2} as="div">
+          <div className="mt-[clamp(2rem,4vw,3.5rem)] flex flex-wrap justify-center gap-3">
+            <Button variant="primary" href="/agent">Become an Agent</Button>
+            <Button variant="outline" href="/upcycler">Join as Upcycler</Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

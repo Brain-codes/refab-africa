@@ -102,9 +102,10 @@ export default function TheProcess() {
               Every step is guided by sustainability, creativity, and
               people-first thinking.
             </p>
-            <Button variant="outline" href="/donate">
-              Donate Now
-            </Button>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button variant="outline" href="/donate">Donate Now</Button>
+              <Button variant="outline" href="/upcycler">Join as Upcycler</Button>
+            </div>
           </div>
         </FadeIn>
       </div>

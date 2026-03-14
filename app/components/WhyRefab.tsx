@@ -6,6 +6,16 @@ import { FadeIn } from "./animations";
 export default function WhyRefab() {
   return (
     <section className="relative w-full overflow-hidden bg-primary-deepest px-[5%] py-[clamp(3.2rem,6.5vw,5.7rem)]">
+            {/* SVG background pattern */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <Image
+          src="/images/svg-background-image-pattern.svg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       <div className="mx-auto max-w-432">
         <div className="grid grid-cols-1 items-center gap-[clamp(1.65rem,4.1vw,3.9rem)] lg:grid-cols-[1.37fr_1fr]">
           {/* ── Left Column: Text Content ── */}

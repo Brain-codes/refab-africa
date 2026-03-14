@@ -56,7 +56,7 @@ export default function ContactHero() {
           src="/images/svg-background-image-pattern.svg"
           alt=""
           fill
-          className="object-cover opacity-10"
+          className="object-cover"
           priority
         />
       </div>

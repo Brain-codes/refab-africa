@@ -1,3 +1,7 @@
+# SUPABASE ARCHITECTURE & CODING INSTRUCTIONS
+
+> See [SUPABASE_ARCHITECTURE_RULES.md](SUPABASE_ARCHITECTURE_RULES.md) for the full Supabase architecture and coding rules. Follow all rules defined in that file.
+
 # Coding Rules & Preferences
 
 ## 1. No Code Duplication
